@@ -1,0 +1,19 @@
+#!/bin/sh
+export PASSPHRASE=
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+## Two options for restoring, uncomment and edit the one to use!
+## (to restore everything, just take out the --file-to-restore command and filename)
+ 
+# Restore a single file
+# NOTE - REMEMBER to name the file in both the --file-to-restore and in the location you will restore it to!
+# Also file name (path) is relative to the root of the directory backed up (e.g. pliableweb.com/test is just test)
+#duplicity --s3-use-new-style --file-to-restore FILENAME s3+http://BUCKETNAME /FILE/TO/RESTORE/TO --encrypt-key=YOUR_GPG_KEY --sign-key=YOUR_GPG_KEY -vinfo
+ 
+# Restore a file from a specified day
+# NOTE - Remember to name the file in both locations again!
+#duplicity --s3-use-new-style -t4D --file-to-restore FILENAME s3+http://BUCKETNAME /FILE/TO/RESTORE/TO --encrypt-key=YOUR_GPG_KEY --sign-key=YOUR_GPG_KEY
+ 
+export PASSPHRASE=
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
